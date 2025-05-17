@@ -46,6 +46,8 @@ router.post('/signin', async (req, res) => {
     result: true,
     token: user.token,
     username: user.username,
+    email: user.email,
+    phone: user.phone,
     id: user._id.toString(),
   });
 });
