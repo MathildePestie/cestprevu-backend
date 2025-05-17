@@ -13,7 +13,13 @@ var listsRouter = require('./routes/lists');
 var app = express();
 const cors = require('cors');
 
-app.use(cors());
+const corsOptions = {
+    origin: "https://cestprevu-frontend.vercel.app",
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  };
+  
+  app.use(cors(corsOptions));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
